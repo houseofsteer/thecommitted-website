@@ -1,0 +1,468 @@
+/* ============================================================
+   Committed — thecommitted.world
+   Palette and type lifted from the live Lovable site so the
+   port is visually identical.
+   ============================================================ */
+
+:root{
+  --cream:#FAF6F0;        /* page base */
+  --cream-warm:#F0E9E0;   /* alternating section */
+  --green:#2B4A40;        /* dark section */
+  --green-dark:#1D342D;   /* footer, masthead */
+  --ink:#1A1A1A;
+  --ink-mid:#4A4A4A;
+  --ink-light:#8A8A8A;
+  --terracotta:#C08E7C;   /* sole accent, buttons */
+  --terracotta-light:#D4AA99;
+  --border:#DDD3C7;
+  --border-on-dark:rgba(255,255,255,.18);
+
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"DM Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  font-weight:300;
+  line-height:1.7;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;}
+
+h1,h2,h3{
+  font-family:var(--serif);
+  font-weight:300;
+  letter-spacing:.005em;
+  line-height:1.2;
+  margin:0;
+}
+
+.wrap{margin:0 auto;max-width:1060px;padding:0 28px;}
+.narrow{max-width:760px;}
+
+section{padding:96px 0;}
+.sec-warm{background:var(--cream-warm);}
+.sec-green{background:var(--green);color:#fff;}
+.sec-green h1,.sec-green h2,.sec-green h3{color:#fff;}
+
+/* ---------- masthead ---------- */
+
+.masthead{
+  background:var(--green-dark);
+  position:sticky;
+  top:0;
+  z-index:30;
+}
+
+.masthead .wrap{
+  align-items:center;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:16px;
+  padding-top:16px;
+}
+
+.masthead .brand{
+  color:var(--cream);
+  font-size:15px;
+  font-weight:500;
+  letter-spacing:.2em;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.masthead nav{align-items:center;display:flex;gap:22px;}
+
+.masthead nav a{
+  color:var(--cream);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.16em;
+  opacity:.85;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+.masthead nav a:hover{opacity:1;}
+
+/* ---------- shared bits ---------- */
+
+.eyebrow{
+  color:var(--ink-light);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.24em;
+  margin:0 0 20px;
+  text-transform:uppercase;
+}
+
+.sec-green .eyebrow{color:var(--terracotta-light);}
+
+.rule{
+  background:var(--terracotta);
+  border:0;
+  height:1px;
+  margin:0 auto 24px;
+  width:44px;
+}
+
+.rule-left{margin-left:0;}
+
+.btn{
+  background:var(--terracotta);
+  color:#fff;
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:.16em;
+  padding:16px 34px;
+  text-decoration:none;
+  text-transform:uppercase;
+  transition:background .25s ease;
+}
+
+.btn:hover{background:var(--terracotta-light);}
+
+.lede{
+  color:var(--ink-mid);
+  font-size:17px;
+  margin:0 auto;
+  max-width:620px;
+}
+
+.sec-green .lede{color:rgba(255,255,255,.82);}
+
+/* ---------- hero ---------- */
+
+/* Split hero: cream panel on the left, photo bleeding off the right.
+   Matches the Lovable original, including the 768px cutoff where the
+   photo drops and the panel goes full width. */
+
+.hero{
+  align-items:center;
+  display:flex;
+  min-height:92vh;
+  overflow:hidden;
+  padding-top:60px;
+  position:relative;
+}
+
+.hero-panel{
+  align-items:center;
+  background:var(--cream);
+  display:flex;
+  min-height:92vh;
+  position:relative;
+  width:40%;
+  z-index:10;
+}
+
+.hero-inner{
+  padding:80px 56px;
+  text-align:center;
+  width:100%;
+}
+
+.hero-photo{
+  background:url(assets/hero-bg.jpg) center/cover no-repeat;
+  height:100%;
+  position:absolute;
+  right:0;
+  top:0;
+  width:70%;
+}
+
+.hero .wordmark{
+  display:block;
+  height:auto;
+  margin:0 auto 34px;
+  max-width:220px;
+  width:100%;
+}
+
+.hero h1{
+  font-size:clamp(26px,2.4vw,30px);
+  margin:0 0 22px;
+}
+
+.hero .lede{font-size:15.5px;margin-bottom:32px;}
+
+/* ---------- why / three-up ---------- */
+
+.threeup{
+  display:grid;
+  gap:56px;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:58px;
+  text-align:left;
+}
+
+.threeup .label{
+  color:var(--terracotta);
+  font-size:10.5px;
+  font-weight:500;
+  letter-spacing:.22em;
+  margin-bottom:14px;
+  text-transform:uppercase;
+}
+
+.threeup h3{font-size:24px;margin-bottom:14px;}
+
+.threeup p{color:var(--ink-mid);font-size:15.5px;margin:0;}
+
+/* ---------- who this is for ---------- */
+
+.audience{
+  display:grid;
+  gap:40px 52px;
+  grid-template-columns:repeat(2,1fr);
+  margin-top:54px;
+}
+
+.audience .item{
+  border-top:1px solid var(--border);
+  padding-top:24px;
+}
+
+.audience .glyph{
+  color:var(--terracotta);
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.audience p{color:var(--ink-mid);font-size:15.5px;margin:0;}
+
+.closer-line{
+  font-family:var(--serif);
+  font-size:26px;
+  margin:58px 0 0;
+  text-align:center;
+}
+
+/* ---------- numbered outcomes ---------- */
+
+.outcomes{margin-top:54px;}
+
+.outcome{
+  border-top:1px solid var(--border);
+  display:grid;
+  gap:10px 40px;
+  grid-template-columns:70px 1fr;
+  padding:32px 0;
+}
+
+.outcome:last-child{border-bottom:1px solid var(--border);}
+
+.outcome .num{
+  color:var(--terracotta);
+  font-family:var(--serif);
+  font-size:26px;
+  line-height:1.1;
+}
+
+.outcome h3{font-size:23px;margin-bottom:10px;}
+
+.outcome p{color:var(--ink-mid);font-size:15.5px;margin:0;}
+
+/* ---------- how it works ---------- */
+
+.pillars{
+  display:grid;
+  gap:1px;
+  grid-template-columns:repeat(2,1fr);
+  margin-top:54px;
+}
+
+.pillar{
+  background:var(--cream);
+  border:1px solid var(--border);
+  padding:38px 34px;
+}
+
+.pillar .glyph{
+  color:var(--terracotta);
+  font-size:19px;
+  margin-bottom:14px;
+}
+
+.pillar h3{font-size:23px;margin-bottom:12px;}
+
+.pillar p{color:var(--ink-mid);font-size:15.5px;margin:0;}
+
+/* ---------- closing ---------- */
+
+.closing{text-align:center;}
+
+.closing h2{
+  font-size:clamp(28px,4.2vw,40px);
+  margin:0 auto 24px;
+  max-width:680px;
+}
+
+/* ---------- apply ---------- */
+
+.form-frame{
+  border:1px solid var(--border);
+  margin-top:46px;
+  min-height:1600px;
+  width:100%;
+}
+
+/* ---------- partners ---------- */
+
+.pathways{
+  display:grid;
+  gap:28px;
+  grid-template-columns:repeat(2,1fr);
+  margin-top:54px;
+}
+
+.pathway{
+  background:var(--cream);
+  border:1px solid var(--border);
+  display:flex;
+  flex-direction:column;
+  padding:40px 36px;
+}
+
+.pathway .glyph{color:var(--terracotta);font-size:22px;margin-bottom:16px;}
+.pathway h3{font-size:25px;margin-bottom:8px;}
+
+.pathway .sub{
+  color:var(--terracotta);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.18em;
+  margin-bottom:16px;
+  text-transform:uppercase;
+}
+
+.pathway p{color:var(--ink-mid);flex:1;font-size:15.5px;margin:0 0 26px;}
+
+.crumbs{
+  color:var(--ink-light);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.16em;
+  margin:0 0 22px;
+  text-transform:uppercase;
+}
+
+.crumbs a{text-decoration:none;}
+.crumbs a:hover{color:var(--terracotta);}
+
+.prose h3{font-size:25px;margin:48px 0 14px;}
+.prose h4{font-family:var(--serif);font-size:21px;font-weight:400;margin:34px 0 10px;}
+.prose p{color:var(--ink-mid);margin:0 0 16px;}
+
+.prose ul{color:var(--ink-mid);margin:0 0 20px;padding-left:0;list-style:none;}
+
+.prose ul li{
+  margin-bottom:10px;
+  padding-left:22px;
+  position:relative;
+}
+
+.prose ul li::before{
+  color:var(--terracotta);
+  content:'◆';
+  font-size:9px;
+  left:0;
+  position:absolute;
+  top:.35em;
+}
+
+.pull{
+  border-left:2px solid var(--terracotta);
+  font-family:var(--serif);
+  font-size:24px;
+  margin:36px 0;
+  padding:6px 0 6px 26px;
+}
+
+.factlist{
+  border-top:1px solid var(--border);
+  margin:26px 0 0;
+}
+
+.factlist div{
+  border-bottom:1px solid var(--border);
+  display:grid;
+  gap:8px 24px;
+  grid-template-columns:190px 1fr;
+  padding:14px 0;
+}
+
+.factlist dt{
+  color:var(--ink);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.factlist dd{color:var(--ink-mid);font-size:15.5px;margin:0;}
+
+/* ---------- footer ---------- */
+
+footer{
+  background:var(--green-dark);
+  color:rgba(255,255,255,.7);
+  padding:54px 0;
+  text-align:center;
+}
+
+footer nav{margin:0 0 16px;}
+
+footer nav a{
+  color:var(--cream);
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.16em;
+  margin:0 12px;
+  opacity:.85;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+
+footer nav a:hover{opacity:1;}
+
+footer .disclaimer{font-size:11.5px;opacity:.6;}
+
+/* ---------- responsive ---------- */
+
+@media (max-width:900px){
+  .hero-inner{padding:72px 32px;}
+}
+
+@media (max-width:860px){
+  section{padding:68px 0;}
+  .threeup,.audience,.pillars,.pathways{grid-template-columns:1fr;}
+  .threeup{gap:40px;}
+  .outcome{grid-template-columns:1fr;gap:4px;}
+  .factlist div{grid-template-columns:1fr;}
+  .masthead nav{gap:14px;}
+  .masthead nav a{font-size:10px;}
+}
+
+/* photo drops and the panel goes full width, same breakpoint as the original */
+@media (max-width:768px){
+  .hero{min-height:auto;padding-top:0;}
+  .hero-panel{min-height:auto;width:100%;}
+  .hero-photo{display:none;}
+  .hero h1{font-size:clamp(25px,5vw,30px);}
+}
+
+@media (max-width:600px){
+  .hero-inner{padding:56px 24px;}
+}
